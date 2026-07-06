@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap");
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #17211b;
+  background: #f4f1e8;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, input, textarea, select { font: inherit; }
+a { color: #176b4d; font-weight: 700; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Auth pages (login/register) keep the phase-1 look */
+.auth-page {
+  min-height: 100vh;
+  padding: 2rem;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 10% 20%, #f5c96b 0 8%, transparent 8.2%),
+    linear-gradient(135deg, #f4f1e8 50%, #dbe8d4 50%);
+}
+
+.card {
+  width: min(100%, 640px);
+  padding: 2rem;
+  background: #fffdf7;
+  border: 1px solid #17211b;
+  border-radius: 18px;
+  box-shadow: 8px 8px 0 #17211b;
+  margin: 1rem 0;
+}
+.card.wide { width: min(100%, 900px); }
+
+h1 { margin: .25rem 0 1.5rem; font-family: "Space Grotesk", sans-serif; font-size: clamp(1.6rem, 4.5vw, 2.8rem); line-height: 1.05; }
+h3 { font-family: "Space Grotesk", sans-serif; margin-top: 1.2rem; }
+.eyebrow { color: #176b4d; font-size: .78rem; font-weight: 700; letter-spacing: .14em; margin-bottom: 0; }
+label { display: grid; gap: .4rem; margin: .9rem 0; font-weight: 700; }
+input, textarea, select { padding: .75rem .9rem; border: 1px solid #829087; border-radius: 8px; background: white; font-weight: 400; }
+input:focus, textarea:focus { outline: 3px solid #f5c96b; border-color: #17211b; }
+button { padding: .8rem 1.1rem; border: 1px solid #17211b; border-radius: 8px; color: white; background: #176b4d; font-weight: 700; cursor: pointer; }
+button:disabled { opacity: .55; cursor: wait; }
+button.secondary { color: #17211b; background: transparent; }
+.button-link { display: inline-block; padding: .7rem 1rem; border: 1px solid #17211b; border-radius: 8px; }
+.helper { margin: 1.25rem 0 0; text-align: center; }
+.error { color: #a72d2d; }
+.success { color: #176b4d; }
+.muted { color: #5e6962; }
+.badge { display: inline-block; margin-left: .5rem; padding: 0 .5rem; background: #f5c96b; border: 1px solid #17211b; border-radius: 999px; font-style: normal; font-size: .75rem; }
+
+/* App shell (post-login layout) */
+.app-shell {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f4f1e8 0, #eef1e6 100%);
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  padding: 1rem 1.6rem;
+  background: #fffdf7;
+  border-bottom: 1px solid #17211b;
+  flex-wrap: wrap;
+}
+.brand { font-family: "Space Grotesk", sans-serif; font-size: 1.15rem; }
+.nav-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+.nav-links a { color: #17211b; font-weight: 600; }
+.nav-links a.active { color: #176b4d; text-decoration: underline; }
+.nav-right { margin-left: auto; display: flex; gap: .8rem; align-items: center; }
+.who { font-weight: 700; }
+.page { padding: 2rem 1.4rem; max-width: 1200px; margin: auto; }
+
+.hero { max-width: 900px; }
+.tile-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin: 1.5rem 0;
+}
+.tile {
+  display: block;
+  padding: 1.2rem;
+  background: #fffdf7;
+  border: 1px solid #17211b;
+  border-radius: 14px;
+  box-shadow: 6px 6px 0 #17211b;
+  color: #17211b;
+}
+.tile:hover { transform: translate(-1px, -1px); box-shadow: 8px 8px 0 #17211b; }
+.tile h3 { margin: 0 0 .3rem; }
+.user-detail { display: inline-grid; gap: .2rem; margin-top: 1rem; padding: 1rem 1.3rem; border-left: 5px solid #f5c96b; background: #fffdf7; }
+.user-detail span { color: #5e6962; font-size: .8rem; }
+
+.filter-bar { display: flex; gap: .8rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.filter-bar input { flex: 1 1 220px; }
+
+.cards { list-style: none; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.job-card h3 { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; margin-top: 0; }
+.job-card p { margin: .3rem 0; }
+.score { font-size: .85rem; color: #176b4d; font-weight: 700; }
+.actions { display: flex; gap: .6rem; margin-top: .8rem; flex-wrap: wrap; }
+.preview { margin-top: 1.5rem; }
+.scroll-box { max-height: 300px; overflow: auto; white-space: pre-wrap; background: #f8f7ef; padding: .8rem; border-radius: 8px; }
+
+@media (max-width: 620px) {
+  .card { padding: 1.3rem; box-shadow: 5px 5px 0 #17211b; }
+  .nav-right { width: 100%; justify-content: flex-end; }
+}
